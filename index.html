@@ -1,78 +1,71 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>NOVA ERC — Official Hub</title>
-  <meta name="description" content="NOVA ERC — official hub. Claims live only on claimnova.xyz and claimprima.xyz."/>
-  <link rel="preload" as="image" href="/nova-banner.png"/>
-  <link rel="stylesheet" href="/style.css"/>
+  <meta name="description" content="Official information hub for NOVA ERC. Claim portals and announcements." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="header">
-    <a class="brand" href="/">NOVA ERC</a>
-
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav id="nav" class="nav">
-      <a href="#about">About</a>
-      <a href="#links">Official Links</a>
-      <a href="#announcements">Announcements</a>
-      <a href="#faq">FAQ</a>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="nova-banner.png" class="banner" alt="NOVA banner" />
+      <div class="brand">
+        <h1 class="site-title">NOVA ERC</h1>
+        <p class="tagline">This is the official information hub. <strong>Claims do not happen here.</strong></p>
+        <p class="subtag">Use the official claim portals below.</p>
+      </div>
+    </div>
   </header>
 
-  <main class="wrap">
-    <img class="hero" src="/nova-banner.png" alt="NOVA banner"/>
-
-    <section id="about" class="section">
-      <h1>NOVA ERC</h1>
-      <p>This is the official information hub. <strong>Claims do not happen here.</strong> Use the official claim portals below.</p>
-    </section>
-
-    <section id="links" class="section">
+  <main class="container">
+    <section class="portals">
       <h2>Official Claim Portals</h2>
       <div class="cards">
-        <a class="card" href="https://claimnova.xyz" target="_blank" rel="noopener">Claim NOVA →</a>
-        <a class="card" href="https://claimprima.xyz" target="_blank" rel="noopener">Claim PRIMA →</a>
+        <a class="card link-card" href="https://claimnova.xyz" target="_blank" rel="noopener">
+          <div class="card-title">Claim NOVA</div>
+          <div class="arrow">↗</div>
+        </a>
+        <a class="card link-card" href="https://claimprima.xyz" target="_blank" rel="noopener">
+          <div class="card-title">Claim PRIMA</div>
+          <div class="arrow">↗</div>
+        </a>
       </div>
-      <p class="muted">Standard Base network fee applies. NovaERC.com never asks to connect your wallet.</p>
+      <p class="note">Standard network fees apply on their respective networks. NovaERC.com will never ask to connect your wallet.</p>
     </section>
 
-    <section id="announcements" class="section">
-      <h2>Announcements</h2>
-      <div class="ads">
-        <article class="ad">
-          <h3>VOLT (Coming Soon)</h3>
-          <p>Same clean claim flow on Base. Launch date will be announced here.</p>
-        </article>
-        <article class="ad">
-          <h3>Proof-of-Burn Vault (Preview)</h3>
-          <p>A transparent vault page to showcase burns and supply updates.</p>
-        </article>
+    <section class="grid two">
+      <div class="card announcement">
+        <h3>VOLT (Coming Soon)</h3>
+        <p>Same clean claim flow on Base. Launch date will be announced here.</p>
+      </div>
+      <div class="card announcement">
+        <h3>Proof‑of‑Burn Vault (Preview)</h3>
+        <p>A transparent vault page to showcase burns and supply updates.</p>
       </div>
     </section>
 
-    <section id="faq" class="section">
+    <section class="faq">
       <h2>FAQ</h2>
       <details>
         <summary>Why can’t I claim on NovaERC.com?</summary>
-        <p>For safety and simplicity. All claiming is handled by dedicated portals: claimnova.xyz and claimprima.xyz.</p>
+        <p>For security, claims only happen on the dedicated portals above. This hub hosts links and announcements only.</p>
       </details>
       <details>
-        <summary>Which network?</summary>
-        <p>Base mainnet (chain 8453). The claim sites handle the rest.</p>
+        <summary>Which networks?</summary>
+        <p>NOVA is on Ethereum (L1). PRIMA is on Base. Always check the portal URL before interacting.</p>
       </details>
     </section>
   </main>
 
-  <footer class="footer">
-    <small>© <span id="year"></span> NOVA ERC — Only the links above are official.</small>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 NOVA ERC — Only the links above are official.</p>
+    </div>
   </footer>
-
-  <script src="/menu.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

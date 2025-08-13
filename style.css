@@ -1,52 +1,107 @@
+/* NOVA ERC minimal landing — no JS, no wallet connection */
 :root{
-  --bg:#fdfbf6;
-  --ink:#0f1720;
-  --muted:#5b6672;
-  --panel:#ffffff;
-  --accent:#0b66ff;
-  --line:#ececec;
-  --shadow:0 8px 28px rgba(0,0,0,.06);
+  --bg:#F7F5EF;
+  --card:#ffffff;
+  --text:#0e362f;
+  --muted:#4f6b65;
+  --accent:#0f766e;
+  --ring:rgba(15,118,110,.15);
+  --shadow:0 10px 25px rgba(0,0,0,.06);
+  --radius:16px;
 }
+
 *{box-sizing:border-box}
 html,body{height:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-
-.header{
-  position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
-  padding:10px 14px;
+body{
+  margin:0;
+  font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
 }
-.brand{font-weight:800;text-decoration:none;color:var(--ink);letter-spacing:.2px}
-.nav{display:none;gap:14px}
-.nav a{text-decoration:none;color:var(--muted)}
-.nav a:hover{text-decoration:underline}
 
-.hamburger{
-  width:40px;height:32px;border:0;background:transparent;display:grid;gap:4px;cursor:pointer;
+.container{
+  width:min(1100px,92%);
+  margin-inline:auto;
 }
-.hamburger span{display:block;height:3px;background:var(--ink);border-radius:2px}
 
-.wrap{max-width:960px;margin:0 auto;padding:20px 16px}
-.hero{width:100%;height:auto;display:block;margin:6px auto 20px}
-.section{margin:18px 0}
-.section h1{font-size:clamp(24px,5vw,40px);margin:6px 0 6px}
-.section h2{font-size:clamp(20px,4.5vw,28px);margin:8px 0}
-.muted{color:var(--muted);font-size:14px}
+.site-header{
+  padding:28px 0 8px;
+}
 
-.cards{display:grid;grid-template-columns:1fr;gap:12px;margin-top:10px}
+.header-inner{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:20px;
+  align-items:center;
+}
+
+.banner{
+  width:120px;height:120px;border-radius:20px;object-fit:cover;
+  box-shadow:var(--shadow);
+  border:1px solid #e9e5dd;
+  background:#222;
+}
+
+.brand .site-title{
+  margin:0 0 4px;
+  font-size:clamp(28px,3.3vw,40px);
+  letter-spacing:.3px;
+}
+
+.brand .tagline,.brand .subtag{margin:.2rem 0;color:var(--muted)}
+
+.portals h2,.faq h2{font-size:clamp(20px,2.6vw,26px);margin:26px 0 12px}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+
 .card{
-  background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;
-  text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:transform .08s ease;
+  background:var(--card);
+  border:1px solid #ece8e0;
+  border-radius:var(--radius);
+  padding:18px 18px;
+  box-shadow:var(--shadow);
 }
-.card:hover{transform:translateY(-1px)}
-.ads{display:grid;grid-template-columns:1fr;gap:12px;margin-top:10px}
-.ad{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
 
-.footer{border-top:1px solid var(--line);padding:18px 16px;text-align:center;color:var(--muted);font-size:14px}
+.link-card{
+  display:flex;align-items:center;justify-content:space-between;
+  text-decoration:none;color:var(--text);
+  transition:.18s transform ease,.18s box-shadow ease,.18s border-color ease;
+}
 
-/* Desktop */
-@media (min-width:760px){
-  .nav{display:flex}
-  .hamburger{display:none}
-  .cards,.ads{grid-template-columns:repeat(2,1fr)}
+.link-card:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(0,0,0,.08);border-color:#e3ded5}
+.link-card:active{transform:translateY(0) scale(.99)}
+
+.card-title{font-weight:600;font-size:18px}
+.arrow{font-size:20px;color:var(--accent)}
+
+.note{color:var(--muted);margin:12px 2px 6px}
+
+.grid.two{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:22px 0;
+}
+
+.announcement h3{margin:4px 0 6px;font-size:18px}
+.announcement p{margin:0;color:var(--muted)}
+
+.faq details{
+  background:var(--card);border:1px solid #ece8e0;border-radius:12px;
+  padding:14px 16px;margin:10px 0;box-shadow:var(--shadow);
+}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin:10px 0 0;color:var(--muted)}
+
+.site-footer{margin:40px 0 28px;color:var(--muted);text-align:center;font-size:14px}
+
+/* Responsive */
+@media (max-width:720px){
+  .header-inner{grid-template-columns:72px 1fr}
+  .banner{width:72px;height:72px;border-radius:12px}
+  .cards,.grid.two{grid-template-columns:1fr}
 }
