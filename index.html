@@ -1,30 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NOVA ERC Hub</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NOVA ERC — Official Hub</title>
+  <meta name="description" content="Official hub for NOVA ERC. No wallet connection. Links to claim portals." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <img src="nova-banner.png" alt="NOVA Banner" />
-    <div class="tabs">
-      <a href="https://claimnova.xyz" target="_blank">Claim NOVA</a>
-      <a href="https://claimprima.xyz" target="_blank">Claim PRIMA</a>
+  <!-- Top bar -->
+  <header class="site-header">
+    <button id="menuToggle" class="hamburger" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="site-title">NOVA ERC</div>
+  </header>
+
+  <!-- Drawer -->
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <strong>NOVA ERC</strong>
+      <button id="closeDrawer" class="close" aria-label="Close menu">✕</button>
     </div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-    <div id="menu" class="menu hidden">
-      <a href="https://claimlira.xyz" target="_blank">Claim LIRA</a>
-      <a href="https://claimvault.xyz" target="_blank">Claim VAULT</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+    <nav class="drawer-nav">
+      <p class="nav-group">Claim portals</p>
+      <a class="nav-link" href="https://claimnova.xyz" target="_blank" rel="noopener">Claim NOVA</a>
+      <a class="nav-link" href="https://claimprima.xyz" target="_blank" rel="noopener">Claim PRIMA</a>
+      <a class="nav-link" href="#" aria-disabled="true">Claim LIRA (soon)</a>
+      <a class="nav-link" href="#" aria-disabled="true">Claim VOLT (soon)</a>
+      <a class="nav-link" href="https://claimvault.xyz" target="_blank" rel="noopener">Proof‑of‑Burn Vault</a>
+      <p class="nav-group">Info</p>
+      <a class="nav-link" href="#faq">FAQ</a>
+      <a class="nav-link" href="#about">About</a>
+    </nav>
+    <div class="drawer-foot">© 2025 NOVA ERC</div>
+  </aside>
+  <div id="scrim" class="scrim" hidden></div>
+
+  <!-- Hero -->
+  <main class="container">
+    <img src="img/nova-banner.png" alt="NOVA banner" class="banner" />
+    <h1>Official Information Hub</h1>
+    <p class="lede">Claims do not happen here. Use the official claim portals below. This site never asks to connect your wallet.</p>
+
+    <div class="cards">
+      <a class="card" href="https://claimnova.xyz" target="_blank" rel="noopener">
+        <div>Claim NOVA</div><span class="arrow">↗</span>
+      </a>
+      <a class="card" href="https://claimprima.xyz" target="_blank" rel="noopener">
+        <div>Claim PRIMA</div><span class="arrow">↗</span>
+      </a>
     </div>
-  </div>
-  <script>
-    function toggleMenu() {
-      document.getElementById('menu').classList.toggle('hidden');
-    }
-  </script>
+
+    <section id="faq" class="faq">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Why can’t I claim on NovaERC.com?</summary>
+        <p>For security and clarity: claims happen only on the dedicated portals listed above.</p>
+      </details>
+      <details>
+        <summary>Which networks?</summary>
+        <p>NOVA: Ethereum L1. PRIMA: Base L2. Each portal shows its network and fee.</p>
+      </details>
+    </section>
+  </main>
+
+  <!-- Bottom tabs -->
+  <nav class="tabbar" aria-label="Quick links">
+    <a class="tab" href="https://claimnova.xyz" target="_blank" rel="noopener">
+      <span class="tab-title">Claim NOVA</span>
+      <span class="tab-sub">Ethereum</span>
+    </a>
+    <a class="tab" href="https://claimprima.xyz" target="_blank" rel="noopener">
+      <span class="tab-title">Claim PRIMA</span>
+      <span class="tab-sub">Base</span>
+    </a>
+  </nav>
+
+  <footer class="footer">© 2025 NOVA ERC — Only the links above are official.</footer>
+
+  <script src="menu.js"></script>
 </body>
 </html>

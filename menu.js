@@ -1,13 +1,27 @@
-const btn = document.getElementById('hamburger');
-const nav = document.getElementById('nav');
+// Drawer interactions (no web3)
+const drawer = document.getElementById('drawer');
+const toggle = document.getElementById('menuToggle');
+const closeBtn = document.getElementById('closeDrawer');
+const scrim = document.getElementById('scrim');
 
-function toggleMenu(){
-  const open = nav.style.display === 'grid' || nav.style.display === 'block';
-  nav.style.display = open ? 'none' : 'grid';
-  btn.setAttribute('aria-expanded', String(!open));
+function openDrawer(){
+  drawer.classList.add('open');
+  drawer.setAttribute('aria-hidden','false');
+  toggle.setAttribute('aria-expanded','true');
+  scrim.classList.add('show');
+  scrim.hidden = false;
+}
+function closeDrawer(){
+  drawer.classList.remove('open');
+  drawer.setAttribute('aria-hidden','true');
+  toggle.setAttribute('aria-expanded','false');
+  scrim.classList.remove('show');
+  scrim.hidden = true;
 }
 
-if (btn && nav) {
-  btn.addEventListener('click', toggleMenu);
-  nav.style.display = 'none';
-}
+toggle?.addEventListener('click', ()=>{
+  if (drawer.classList.contains('open')) closeDrawer(); else openDrawer();
+});
+closeBtn?.addEventListener('click', closeDrawer);
+scrim?.addEventListener('click', closeDrawer);
+document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer(); });
