@@ -14,28 +14,31 @@ header {
 }
 
 .menu {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   user-select: none;
   transition: transform 0.2s ease;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
 }
 .menu:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 nav {
   position: absolute;
   top: 3.5rem;
   right: 1rem;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
+  background: #fff;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
   padding: 0.75rem 1.25rem;
   text-align: right;
   z-index: 10;
+  min-width: 180px;
   transition: opacity 0.3s ease;
 }
 
@@ -44,7 +47,7 @@ nav a {
   padding: 0.5rem 0;
   color: #111;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.95rem;
   transition: color 0.2s ease;
 }
 
@@ -66,41 +69,32 @@ nav.hidden {
 
 h1 {
   margin-top: 2rem;
-  font-size: 1.8rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 500;
 }
 
 .links {
   margin-top: 2rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .btn {
-  background-color: #005ce6;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  font-size: 1rem;
+  background-color: #ffffff;
+  color: #005ce6;
+  padding: 0.5rem 1.2rem;
+  border-radius: 24px;
+  border: 1.5px solid #005ce6;
+  font-size: 0.95rem;
   font-weight: 500;
   text-decoration: none;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  transition: background 0.2s ease, transform 0.1s ease;
+  transition: all 0.2s ease;
 }
 
 .btn:hover {
-  background-color: #0047b3;
-  transform: translateY(-2px);
-}
-
-.btn.secondary {
-  background-color: #ffffff;
-  color: #005ce6;
-  border: 2px solid #005ce6;
-}
-
-.btn.secondary:hover {
-  background-color: #f2f7ff;
+  background-color: #f0f7ff;
+  color: #0047b3;
+  border-color: #0047b3;
 }
