@@ -3,52 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NOVA</title>
+  <title>NOVA ERC</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="menu" id="menuButton">&#9776;</div>
-    <nav id="dropdownMenu" class="hidden">
-      <a href="#">Home</a>
-      <a href="#">What is NOVA?</a>
-      <a href="#">Claim Instructions</a>
-      <a href="#">Import Instructions</a>
-      <a href="#">Vault</a>
-      <a href="#">Ecosystem</a>
-      <a href="#">Wallet Safety</a>
-    </nav>
-  </header>
-
-  <main>
+  <div class="container">
     <img src="nova-banner.png" alt="NOVA Banner" class="banner" />
-    <h1>Digital coins owned by everyone.</h1>
-    <div class="links">
-      <a class="btn" href="https://claimnova.xyz" target="_blank">Claim NOVA</a>
-      <a class="btn" href="https://claimprima.com" target="_blank">Claim PRIMA</a>
+
+    <h1 class="hero">Digital coins owned by everyone.</h1>
+
+    <div class="button-row">
+      <div class="button-box">
+        <a href="https://claimnova.xyz" class="button">Claim NOVA</a>
+        <p class="label">L1 — Ethereum Mainnet</p>
+      </div>
+      <div class="button-box">
+        <a href="https://claimprima.xyz" class="button">Claim PRIMA</a>
+        <p class="label">L2 — Base Network</p>
+      </div>
     </div>
-  </main>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const menu = document.getElementById("dropdownMenu");
-      const menuBtn = document.getElementById("menuButton");
-
-      // Toggle menu when clicking hamburger icon
-      menuBtn.addEventListener("click", function (event) {
-        event.stopPropagation(); // prevent it from closing immediately
-        menu.classList.toggle("hidden");
-      });
-
-      // Close menu if clicking anywhere else
-      document.addEventListener("click", function (event) {
-        if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
-          if (!menu.classList.contains("hidden")) {
-            menu.classList.add("hidden");
-          }
-        }
-      });
-    });
-  </script>
+    <div class="burn">
+      <a href="https://etherscan.io/address/0xe3d931336f6528246349f9ce6db6F7e20C0c58b8" target="_blank">
+        🔥 View Burn Wallet (100,000 NOVA)
+      </a>
+    </div>
+  </div>
 </body>
 </html>
