@@ -8,8 +8,18 @@
 </head>
 <body>
   <header>
-    <div class="menu">&#9776;</div>
+    <div class="menu" onclick="toggleMenu()">&#9776;</div>
+    <nav id="dropdownMenu" class="hidden">
+      <a href="#">Home</a>
+      <a href="#">What is NOVA?</a>
+      <a href="#">Claim Instructions</a>
+      <a href="#">Import Instructions</a>
+      <a href="#">Vault</a>
+      <a href="#">Ecosystem</a>
+      <a href="#">Wallet Safety</a>
+    </nav>
   </header>
+
   <main>
     <img src="nova-banner.png" alt="NOVA Banner" class="banner" />
     <h1>Digital coins owned by everyone.</h1>
@@ -18,5 +28,12 @@
       <a href="https://claimprima.com" target="_blank">claimprima.com</a>
     </div>
   </main>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("dropdownMenu");
+      menu.classList.toggle("hidden");
+    }
+  </script>
 </body>
 </html>
