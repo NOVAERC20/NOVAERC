@@ -33,30 +33,34 @@ nav {
   right: 1rem;
   background: #fff;
   border: 1px solid #ddd;
-  border-radius: 12px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-  padding: 0.75rem 1.25rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  padding: 1rem 1.25rem;
   text-align: right;
   z-index: 10;
-  min-width: 180px;
-  transition: opacity 0.3s ease;
+  min-width: 200px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+nav.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
 }
 
 nav a {
   display: block;
-  padding: 0.5rem 0;
+  padding: 0.6rem 0;
   color: #111;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   transition: color 0.2s ease;
 }
 
 nav a:hover {
   color: #0077ff;
-}
-
-nav.hidden {
-  display: none;
 }
 
 .banner {
