@@ -30,19 +30,24 @@
   </main>
 
   <script>
-    const menu = document.getElementById("dropdownMenu");
-    const menuBtn = document.getElementById("menuButton");
+    document.addEventListener("DOMContentLoaded", function () {
+      const menu = document.getElementById("dropdownMenu");
+      const menuBtn = document.getElementById("menuButton");
 
-    function toggleMenu() {
-      menu.classList.toggle("hidden");
-    }
+      // Toggle menu when clicking hamburger icon
+      menuBtn.addEventListener("click", function (event) {
+        event.stopPropagation(); // prevent it from closing immediately
+        menu.classList.toggle("hidden");
+      });
 
-    document.addEventListener("click", function (event) {
-      const clickedInsideMenu = menu.contains(event.target);
-      const clickedMenuButton = menuBtn.contains(event.target);
-      if (!clickedInsideMenu && !clickedMenuButton) {
-        menu.classList.add("hidden");
-      }
+      // Close menu if clicking anywhere else
+      document.addEventListener("click", function (event) {
+        if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
+          if (!menu.classList.contains("hidden")) {
+            menu.classList.add("hidden");
+          }
+        }
+      });
     });
   </script>
 </body>
